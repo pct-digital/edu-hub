@@ -65,6 +65,12 @@ export const EnrollmentStatus: FC<IProps> = ({ course }) => {
         );
         break;
       }
+      case EnrollmentStatus_enum.COMPLETED: {
+        content = (
+          <span className="bg-gray-300 p-4">{t("status.completed")}</span>
+        );
+        break;
+      }
       default: {
         content = null;
       }

@@ -1,13 +1,14 @@
 {
-  "applyNow": "apply now",
   "applicationFor": "application for",
-  "requirements": "requirements",
+  "applyNow": "apply now",
   "motivationalText": "motivational letter",
   "motivationalTextPlaceholder": "what is so awesome about you",
+  "requirements": "requirements",
   "sendApplication": "send application",
   "status": {
     "aborted": "You did not complete this course successfully.",
     "applied": "You already applied for this course and will get feedback in no time.",
+    "completed": "You have successfully completed the course.",
     "rejected": "You have declined the invitation to this course."
   },
   "successBody": "At latest one or two days after application closes you will get informed about your approval.",
