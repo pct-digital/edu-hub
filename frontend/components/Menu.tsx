@@ -4,8 +4,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
 import { useKeycloak } from "@react-keycloak/ssr";
 import { KeycloakInstance } from "keycloak-js";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useCallback } from "react";
+
+import { useAuth } from "../hooks/authentication";
 
 interface IProps {
   anchorElement: HTMLElement;
@@ -39,6 +42,7 @@ const noop = () => {
 
 export const Menu: FC<IProps> = ({ anchorElement, isVisible, setVisible }) => {
   const { keycloak } = useKeycloak<KeycloakInstance>();
+  const auth = useAuth();
   const router = useRouter();
 
   const hideMenu = useCallback(() => setVisible(false), [setVisible]);
@@ -65,6 +69,13 @@ export const Menu: FC<IProps> = ({ anchorElement, isVisible, setVisible }) => {
       <MenuItem onClick={noop}>
         <span className="text-lg font-bold">Profile</span>
       </MenuItem>
+      {auth.isAdmin && (
+        <MenuItem>
+          <Link href="/programs">
+            <span className="text-lg font-bold">Programs</span>
+          </Link>
+        </MenuItem>
+      )}
       <MenuItem onClick={logout}>
         <span className="text-lg">Logout</span>
       </MenuItem>
