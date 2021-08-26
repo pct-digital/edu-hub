@@ -17,6 +17,17 @@ export interface Programs_Program {
   PerformanceRecordDeadline: any | null;
   Start: any | null;
   Visibility: boolean;
+  ShortName: string | null;
+  QuestionnaireStart: string | null;
+  QuestionnaireEnd: string | null;
+  QuestionnaireSpeaker: string | null;
+  FileNameTemplateParticipationCertificate: string | null;
+  FileNameTemplatePerformanceCertificate: string | null;
+  FileLinkTemplateParticipationCertificate: string | null;
+  FileLinkTemplatePerformanceCertificate: string | null;
+  MaxMissedSessions: number | null;
+  VisiblityParticipationCertificate: boolean | null;
+  VisibilityPerformanceCertificate: boolean | null;
 }
 
 export interface Programs {

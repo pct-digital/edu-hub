@@ -11,6 +11,17 @@ export const PROGRAMS = gql`
       PerformanceRecordDeadline
       Start
       Visibility
+      ShortName
+      QuestionnaireStart
+      QuestionnaireEnd
+      QuestionnaireSpeaker
+      FileNameTemplateParticipationCertificate
+      FileNameTemplatePerformanceCertificate
+      FileLinkTemplateParticipationCertificate
+      FileLinkTemplatePerformanceCertificate
+      MaxMissedSessions
+      VisiblityParticipationCertificate
+      VisibilityPerformanceCertificate
     }
   }
 `;
