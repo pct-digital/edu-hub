@@ -361,10 +361,10 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
               )}`}</p>
             </div>
             <CustomFileInput
-              title={`${tCommon('documentation-template')} (.doc)*`}
+              accept="*"
+              title={`${tCommon('documentation-template')}*`}
               name={AchievementKeys.DOCUMENT_TEMPLATE_FILE}
               id={AchievementKeys.DOCUMENT_TEMPLATE_FILE}
-              accept=".doc, .docx"
               onChangeHandler={handleInputFile}
               customLink={
                 documentTemplateGoogleLink ? (

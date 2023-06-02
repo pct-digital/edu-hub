@@ -55,7 +55,7 @@ export interface AchievementRecordListWithAuthors_AchievementRecord {
   /**
    * ID of hte achievement option the record is uploaded for.
    */
-  achievementOptionId: number | null;
+  achievementOptionId: number;
   /**
    * ID of the user who uploaded the record
    */
@@ -67,7 +67,7 @@ export interface AchievementRecordListWithAuthors_AchievementRecord {
   /**
    * Score calculated for possibly uploaded csv data.
    */
-  score: any;
+  score: any | null;
   /**
    * The course instructor's or mentor's rating for the achievement record
    */

@@ -36,7 +36,10 @@ const Achievements: FC = () => {
   const router = useRouter();
   const userId = useUserId();
   const profile = useKeycloakUserProfile();
-  const courseID: number = parseInt(router.query.courseId as string, 10); // {"courseId": 0}
+  let courseID: number = parseInt(router.query.courseId as string, 10); // {"courseId": 0}
+  if (Number.isNaN(courseID)) {
+    courseID = -1;
+  }
 
   const query = useAdminQuery<AdminCourseList, AdminCourseListVariables>(
     ADMIN_COURSE_LIST,
@@ -44,7 +47,7 @@ const Achievements: FC = () => {
       variables: {
         limit: QUERY_LIMIT,
         where: {
-          id: { _eq: courseID },
+          id: { _eq: courseID ?? -1 },
         },
       },
       skip: courseID <= 0,

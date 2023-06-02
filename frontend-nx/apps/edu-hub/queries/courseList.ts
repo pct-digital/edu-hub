@@ -1,6 +1,10 @@
 import { gql } from '@apollo/client';
 
-import { ADMIN_COURSE_FRAGMENT, COURSE_FRAGMENT, COURSE_TILE_FRAGMENT_ANONYMOUS } from './courseFragment';
+import {
+  ADMIN_COURSE_FRAGMENT,
+  COURSE_FRAGMENT,
+  COURSE_TILE_FRAGMENT_ANONYMOUS,
+} from './courseFragment';
 import { PROGRAM_FRAGMENT_MINIMUM_PROPERTIES } from './programFragment';
 
 export const COURSE_LIST_ANONYMOUS = gql`
@@ -36,7 +40,7 @@ export const ADMIN_COURSE_LIST = gql`
   ${PROGRAM_FRAGMENT_MINIMUM_PROPERTIES}
   query AdminCourseList(
     $where: Course_bool_exp! = {}
-    $limit: Int = null
+    $limit: Int = 100
     $offset: Int = 0
   ) {
     Course(

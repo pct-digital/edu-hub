@@ -1,9 +1,10 @@
-import { CircularProgress, IconButton } from '@material-ui/core';
+import { Button, CircularProgress, IconButton } from '@material-ui/core';
 import { IUserProfile } from '../../hooks/user';
 import { AdminCourseList_Course } from '../../queries/__generated__/AdminCourseList';
 import useTranslation from 'next-translate/useTranslation';
 import { FC, useCallback, useContext, useEffect, useState } from 'react';
 import {
+  MdAddCircle,
   MdDelete,
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
@@ -54,14 +55,14 @@ const AchievementOptionDashboard: FC<{
       where:
         currentProgramId > -1
           ? {
-              AchievementOptionCourses: {
-                Course: {
-                  Program: {
-                    id: { _eq: currentProgramId },
-                  },
+            AchievementOptionCourses: {
+              Course: {
+                Program: {
+                  id: { _eq: currentProgramId },
                 },
               },
-            }
+            },
+          }
           : {},
     },
   });
@@ -167,13 +168,13 @@ const DashboardContent: FC<IPropsContent> = ({ options }) => {
         )}
       </div>
       <div className="flex flex-col space-y-1">
-        <div className="flex justify-end ">
+        <div className="flex justify-end text-white">
           <EhAddButton
             buttonClickCallBack={addNewAchievement}
             text={context.t('add-new')}
           />
         </div>
-        <div className="grid grid-cols-3 gap-5 pl-5">
+        <div className="grid grid-cols-3 gap-5 pl-5 text-white">
           <p>{t('tableHeaderTitle')}</p>
           <p>{t('tableHeaderInstructor')}</p>
           <p>{t('coursesHeadline') + ' & ' + t('tableHeaderProgram')}</p>
@@ -190,7 +191,7 @@ const DashboardContent: FC<IPropsContent> = ({ options }) => {
         </div>
 
         {context.achievementRecordTypes.length > 0 && (
-          <div className="flex justify-end">
+          <div className="flex justify-end text-white">
             <EhAddButton
               buttonClickCallBack={addNewAchievement}
               text={context.t('add-new')}
