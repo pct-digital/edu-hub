@@ -23,5 +23,6 @@
   "some-info-about-you": "Bitte gib uns zunächst noch ein paar Informationen über dich.",
   "status": "Status",
   "allPrograms": "Alle Programme",
-  "filterByProgram": "Programmfilter"
+  "filterByProgram": "Programmfilter",
+  "type-name-email-minimum-3-letters": "Geben Sie mindestens 3 Zeichen Namen oder E-Mail ein"
 }

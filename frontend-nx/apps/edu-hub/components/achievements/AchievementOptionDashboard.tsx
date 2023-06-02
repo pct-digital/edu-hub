@@ -55,14 +55,14 @@ const AchievementOptionDashboard: FC<{
       where:
         currentProgramId > -1
           ? {
-            AchievementOptionCourses: {
-              Course: {
-                Program: {
-                  id: { _eq: currentProgramId },
+              AchievementOptionCourses: {
+                Course: {
+                  Program: {
+                    id: { _eq: currentProgramId },
+                  },
                 },
               },
-            },
-          }
+            }
           : {},
     },
   });
@@ -155,7 +155,7 @@ const DashboardContent: FC<IPropsContent> = ({ options }) => {
   const addNewAchievement = useCallback(() => {
     setShowNewAchievementView(!showNewAchievementView);
   }, [setShowNewAchievementView, showNewAchievementView]);
-  const { t } = useTranslation('course-page');
+  const { t } = useTranslation('achievements-page');
   return (
     <div className="w-full">
       <div className="flex justify-between mb-5">
@@ -171,13 +171,13 @@ const DashboardContent: FC<IPropsContent> = ({ options }) => {
         <div className="flex justify-end text-white">
           <EhAddButton
             buttonClickCallBack={addNewAchievement}
-            text={context.t('add-new')}
+            text={t('add-new')}
           />
         </div>
         <div className="grid grid-cols-3 gap-5 pl-5 text-white">
-          <p>{t('tableHeaderTitle')}</p>
-          <p>{t('tableHeaderInstructor')}</p>
-          <p>{t('coursesHeadline') + ' & ' + t('tableHeaderProgram')}</p>
+          <p>{context.t('title')}</p>
+          <p>{t('mentors')}</p>
+          <p>{t('course_and_program')}</p>
         </div>
         {(options.length === 0 || showNewAchievementView) && (
           <div className="flex bg-edu-light-gray">
@@ -194,7 +194,7 @@ const DashboardContent: FC<IPropsContent> = ({ options }) => {
           <div className="flex justify-end text-white">
             <EhAddButton
               buttonClickCallBack={addNewAchievement}
-              text={context.t('add-new')}
+              text={t('add-new')}
             />
           </div>
         )}
@@ -232,7 +232,7 @@ const AchievementRow: FC<IPropsForARow> = (props) => {
   return (
     <>
       <div className="grid grid-cols-3 gap-5 pl-5 bg-edu-row-color py-2 items-center">
-        <p className="text-ellipsis text-gray-400 font-medium grid grid-cols-1">
+        <p className="text-ellipsis font-medium grid grid-cols-1">
           {props.item.title}
         </p>
         {/* Authors */}

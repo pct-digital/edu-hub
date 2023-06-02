@@ -381,8 +381,8 @@ const FormToUploadAchievementRecord: FC<IProps> = ({
                     height: 320,
                   })}
                   onFileSelected={onFileChange}
-                  acceptedFileTypes=".png"
-                  placeholder={`${t('cover-picture')} (.png)`}
+                  acceptedFileTypes="image/*"
+                  placeholder={`${t('cover-picture')}`}
                   name="coverImageUrl"
                   id="coverImageUrl"
                 />

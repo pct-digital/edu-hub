@@ -82,7 +82,7 @@ const EnrolledUserForACourseDialog: FC<IProps> = (props) => {
       </DialogTitle>
 
       <DialogContent>
-        <p>{t('type-name-email-minimum-3-letters')}</p>
+        <p>{t('users:type-name-email-minimum-3-letters')}</p>
         <div className="py-2">
           <SearchBox
             placeholder={t('search-value')}

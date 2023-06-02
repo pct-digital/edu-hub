@@ -32,7 +32,7 @@
   "end": "Ende",
   "menu-profile": "Profil",
   "menu-faq": "FAQ",
-  "menu-administration-user":"Benutzer",
+  "menu-administration-user": "Benutzer",
   "menu-administration-courses": "Kurse",
   "menu-administration-achievement": "Leistungsnachweise",
   "menu-administration-programs": "Programme",
@@ -62,5 +62,6 @@
   "MUTHESIUS": "Muthesius Kunsthochschule",
   "TH_LUEBECK": "TH Lübeck",
   "UNI_FLENSBURG": "Uni Flensburg",
-  "UNI_LUEBECK": "Uni Lübeck"
+  "UNI_LUEBECK": "Uni Lübeck",
+  "delete": "löschen"
 }

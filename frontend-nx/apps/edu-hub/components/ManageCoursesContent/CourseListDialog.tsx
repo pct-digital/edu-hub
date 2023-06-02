@@ -67,7 +67,7 @@ const CourseListDialog: FC<IProps> = (props) => {
       </DialogTitle>
 
       <DialogContent>
-        <div>{t('type-name-email-minimum-3-letters')}</div>
+        <div>{t('course-page:type-course-minimum-3-letters')}</div>
 
         <div className="py-2">
           <SearchBox

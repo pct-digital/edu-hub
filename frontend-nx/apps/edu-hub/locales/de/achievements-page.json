@@ -18,5 +18,18 @@
   "cover-image-required": "Deckblatt erforderlich",
   "csv-file-missing": "CSV datei fehlt!",
   "documentation-missing": "Bitte Dokumentation hochladen!",
-  "authors-missing": "Bitte Autoren hinzufügen!"
+  "authors-missing": "Bitte Autoren hinzufügen!",
+  "course_and_program": "Kurse & Program",
+  "add-new": "ANeuen hinzufügen",
+  "title-number-of-characters": "Titel ({{numberOfCharacters}} Zeichen)",
+  "description-number-of-characters": "Description ({{numberOfCharacters}} characters)",
+  "achievement-record-type": "Typ Leistungsnachweis",
+  "documentation-template": "Dokumentationsvorlage",
+  "form-mandatory-field": "Pflichtfeld",
+  "documentation-template-CSV": "Dokumentationsvorlage CSV",
+  "download-csv-template-file": "Laden Sie die CSV-Vorlagendatei herunter",
+  "download-documentation-template": "Dokumentationsvorlage herunterladen",
+  "show-authors-column": "Autorenspalte anzeigen",
+  "evaluation-script": "Bewertungsskript",
+  "download-script-file-template": "Laden Sie die Skriptdateivorlage herunter"
 }

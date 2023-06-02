@@ -103,7 +103,7 @@ export const SelectUserDialog: FC<IProps> = ({ onClose, open, title }) => {
       </DialogTitle>
 
       <DialogContent>
-        <div>{t('type-name-email-minimum-3-letters')}</div>
+        <div>{t('users:type-name-email-minimum-3-letters')}</div>
 
         <div>
           <input

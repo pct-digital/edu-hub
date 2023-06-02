@@ -18,5 +18,18 @@
   "cover-image-required": "Cover image required",
   "csv-file-missing": "CSV file missing!",
   "documentation-missing": "Please upload documentation!",
-  "authors-missing": "Please add some authors!"
+  "authors-missing": "Please add some authors!",
+  "course_and_program": "Course & Program",
+  "add-new": "Add New",
+  "title-number-of-characters": "Title ({{numberOfCharacters}} characters)",
+  "description-number-of-characters": "Description ({{numberOfCharacters}} characters)",
+  "achievement-record-type": "Achievements Record Type",
+  "documentation-template": "Documentation template",
+  "form-mandatory-field": "Mandatory Field",
+  "documentation-template-CSV": "Documentation template CSV",
+  "download-csv-template-file": "Download CSV template file",
+  "download-documentation-template": "Download documentation template",
+  "show-authors-column": "Show authors column",
+  "evaluation-script": "Evaluation script",
+  "download-script-file-template": "Download script file template"
 }

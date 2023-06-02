@@ -17,7 +17,6 @@ import {
   AchievementOptionList_AchievementOption,
 } from '../../queries/__generated__/AchievementOptionList';
 import {
-  Box,
   Paper,
   Table,
   TableBody,
@@ -58,7 +57,6 @@ const AchievementOptionDetails: FC = () => {
   const { achievementOptionId } = router.query;
 
   const courseIdString = router.query.courseId;
-  const { t } = useTranslation();
   const id =
     typeof achievementOptionId === 'string' ? parseInt(achievementOptionId) : 0;
   const courseId =
@@ -89,10 +87,14 @@ const AchievementOptionDetails: FC = () => {
   );
 
   useEffect(() => {
-    const details = courseDetails.data?.Course_by_pk || null;
-    setCourse(details);
-    const list = [...(achievementOptionQuery.data?.AchievementOption || [])];
-    setAchievementOption(list.length > 0 ? list[0] : null);
+    try {
+      const details = courseDetails.data?.Course_by_pk || null;
+      setCourse(details);
+      const list = [...(achievementOptionQuery.data?.AchievementOption || [])];
+      setAchievementOption(list.length > 0 ? list[0] : null);
+    } catch (error) {
+      console.log(error);
+    }
   }, [
     achievementOptionQuery.data?.AchievementOption,
     courseDetails,

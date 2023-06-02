@@ -220,7 +220,6 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
 
   const handleInputFile = useCallback(
     (controlName: string, file: UploadFile) => {
-      console.log(controlName);
       dispatch({
         key: controlName,
         value: file,
@@ -255,8 +254,7 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
     }
   }, [state.csvTemplateUrl]);
 
-  const tCommon: Translate = context.t;
-  const { t } = useTranslation('course-page');
+  const { t } = useTranslation();
 
   return (
     <>
@@ -264,14 +262,14 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
         <SelectUserDialog
           onClose={addAchievementMentorHandler}
           open={showMentorDialog}
-          title={tCommon('mentors')}
+          title={t('achievements-page:mentors')}
         />
       )}
       {showCourseListDialog && (
         <CourseListDialog
           onClose={onAddCourseHandler}
           open={showCourseListDialog}
-          title={t('coursesHeadline')}
+          title={t('course-page:course')}
         />
       )}
       <form
@@ -281,7 +279,7 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
         <div className="grid grid-cols-3 gap-5">
           {/* Edit title */}
           <EhInputWithTitle2
-            label={`${tCommon('title-number-of-characters', {
+            label={`${t('achievements-page:title-number-of-characters', {
               numberOfCharacters: 'XXX/200',
             })}*`}
             onChangeHandler={handleInputChange}
@@ -331,7 +329,7 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
 
         <div id="edit-description" className="pr-5">
           <EhInputWithTitle2
-            label={`${tCommon('description-number-of-characters', {
+            label={`${t('achievements-page:description-number-of-characters', {
               numberOfCharacters: 'XXX/500',
             })}*`}
             onChangeHandler={handleInputChange}
@@ -347,7 +345,7 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
           <div className="h-full flex flex-row justify-between">
             <div className="flex flex-col space-y-1">
               <div className="flex flex-col space-y-1">
-                <p>{`${tCommon('achievement-record-type')}*`}</p>
+                <p>{`${t('achievements-page:achievement-record-type')}*`}</p>
                 <EhSelectForEnum2
                   onChange={handleInputChange}
                   options={context.achievementRecordTypes}
@@ -356,20 +354,20 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
                   value={state.recordType ?? ''}
                 />
               </div>
-              <p className="text-stela-500">{`* ${tCommon(
-                'form-mandatory-field'
+              <p className="text-stela-500">{`* ${t(
+                'achievements-page:form-mandatory-field'
               )}`}</p>
             </div>
             <CustomFileInput
               accept="*"
-              title={`${tCommon('documentation-template')}*`}
+              title={`${t('achievements-page:documentation-template')}*`}
               name={AchievementKeys.DOCUMENT_TEMPLATE_FILE}
               id={AchievementKeys.DOCUMENT_TEMPLATE_FILE}
               onChangeHandler={handleInputFile}
               customLink={
                 documentTemplateGoogleLink ? (
                   <Link href={documentTemplateGoogleLink}>
-                    {tCommon('download-documentation-template')}
+                    {t('achievements-page:download-documentation-template')}
                   </Link>
                 ) : (
                   ''
@@ -379,7 +377,9 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
             {state.recordType === 'DOCUMENTATION_AND_CSV' && (
               //
               <CustomFileInput
-                title={`${tCommon('documentation-template-CSV')} (.csv)*`}
+                title={`${t(
+                  'achievements-page:documentation-template-CSV'
+                )} (.csv)*`}
                 accept=".csv, .CSV"
                 onChangeHandler={handleInputFile}
                 name={AchievementKeys.CSV_TEMPLATE_FILE}
@@ -387,7 +387,7 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
                 customLink={
                   state.csvTemplateUrl ? (
                     <Link className="cursor-pointer" onClick={clickCSV}>
-                      {tCommon('download-csv-template-file')}
+                      {t('achievements-page:download-csv-template-file')}
                     </Link>
                   ) : (
                     ''
@@ -401,14 +401,14 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
               <div className="flex justify-end">
                 <CustomFileInput
                   accept=".py"
-                  title={`${tCommon('evaluation-script')} (.py)*`}
+                  title={`${t('achievements-page:evaluation-script')} (.py)*`}
                   onChangeHandler={handleInputFile}
                   name={AchievementKeys.EVALUATION_SCRIPT_FILE}
                   id={AchievementKeys.EVALUATION_SCRIPT_FILE}
                   customLink={
                     scriptGoogleUrl ? (
                       <Link href={scriptGoogleUrl}>
-                        {tCommon('download-script-file-template')}
+                        {t('achievements-page:download-script-file-template')}
                       </Link>
                     ) : (
                       ''
@@ -427,14 +427,14 @@ const FormToAddEditAchievementOption: FC<IPropsAddEditAchievementTempData> = (
                   checked={state.showScoreAuthors}
                 />
               }
-              label={tCommon('show-authors-column')}
+              label={t('achievements-page:show-authors-column')}
             />
           </div>
         </div>
         {!isEqual() && (
           <div className="flex justify-center">
             <Button type="submit" id="submit-button" filled>
-              {loading ? <CircularProgress /> : tCommon('save')}
+              {loading ? <CircularProgress /> : t('save')}
             </Button>
           </div>
         )}
